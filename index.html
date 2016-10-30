@@ -27,18 +27,10 @@
          </div>
       
           <script id="template" type="text/x-handlebars-template">
-         {{#if meta.count}}
-           <div class="row">
-             <b>Найдено:</b> {{meta.count}}<hr>
-           </div>
-         {{else}}
-           <div class="row text-center">
-             <h2>Ничего не найдено</h2><hr>
-           </div>
-         {{/if}}
-      
          <div class="row">
-           <table class="table">
+              <table class="table">
+         {{#if meta.count}}
+             <b>Найдено:</b> {{meta.count}}<hr>
              <thead>
                <tr>
                  <th>Ник</th>
@@ -46,6 +38,11 @@
                  <th>Wargaming</th>
                </tr>
              </thead>
+         {{else}}
+           <div class="text-center">
+             <h2>Ничего не найдено</h2><hr>
+           </div>
+         {{/if}}
              <tbody> {{#each data}}
               <tr>
                 <td><b>{{nickname}}</b></td>
