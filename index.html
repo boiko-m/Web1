@@ -25,6 +25,17 @@
          <div class="updates">
          </div>
       
+          <script id="template" type="text/x-handlebars-template">
+         {{#if meta.count}}
+           <div class="row">
+             <b>Найдено:</b> {{meta.count}}<hr>
+           </div>
+         {{else}}
+           <div class="row text-center">
+             <h2>Ничего не найдено</h2><hr>
+           </div>
+         {{/if}}
+      
          <div class="row">
            <table class="table">
              <thead>
@@ -43,6 +54,8 @@
             </tbody>
           </table>
         </div>
+        </script>
       </div>
+      <script src="js/search.js"></script>
   </body>
 </html>
