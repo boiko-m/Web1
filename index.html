@@ -32,12 +32,12 @@
                  <th>Wargaming</th>
                </tr>
              </thead>
-             <tbody>
+             <tbody> {{#each data}}
               <tr>
                 <td><b>{{nickname}}</b></td>
                 <td>{{account_id}}</td>
                 <td><a href="http://worldofwarplanes.ru/community/players/17191-MarK/{{account_id}}-{{nickname}}" role="button" target="_blank">Посмореть профиль</a></td>
-              </tr>
+              </tr> {{/each}}
             </tbody>
           </table>
         </div>
