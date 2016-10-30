@@ -22,7 +22,7 @@ let getPlayers = () => {
 $(document).ready(function() {
   getPlayers();
 
-  $('body').append('<div id="ajaxBusy"><p><img src="images/loader.gif"></p></div>');
+  $('body').append('<div id="ajaxBusy"><p><img src="img/loader.gif"></p></div>');
   $('#ajaxBusy').css({
     display:"none",
     margin:"0px",
