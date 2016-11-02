@@ -32,26 +32,23 @@ inputSearch.oninput = function() {
 
 $(document).ready(function() {
   if(inputSearch.length >= 3) getPlayers();
-
-  $('body').append('<div id="ajaxBusy"><p><img src="img/loader.gif"></p></div>');
+  $('#ajaxB').append('<div id="ajaxBusy"><p><img src="img/loader.gif"></p></div>');
   $('#ajaxBusy').css({
     display:"none",
     margin:"0px",
     textAlign:"center",
     height:"100vh",
     paddingLeft:"0px",
-    paddingRight:"0px",
+    paddingRight:"-20px",
     paddingTop:"50vh",
     backgroundColor:"rgba(255,255,255,0.7)",
     paddingBottom:"0px",
     position:"absolute",
     right:"0",
     top:"0",
-    width:"100%"
+    width:"108%"
   });
-});
-
-$(document).ajaxStart(function(){
+}).ajaxStart(function(){
   $('#ajaxBusy').show();
 }).ajaxStop(function(){
   $('#ajaxBusy').hide();

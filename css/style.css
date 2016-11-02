@@ -21,3 +21,14 @@
   border-radius: 4px;
   padding: 15px 9px;
 }
+
+.updates {
+  position: relative;
+  display: block;
+}
+
+#ajaxB {
+  position: relative;
+  width: 108%;
+  padding-right: -20px;
+}
