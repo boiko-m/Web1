@@ -12,7 +12,7 @@ let getPlayers = () => {
      timeout: 2000,
      url:'https://api.worldofwarplanes.ru/wowp/account/list/?application_id=' + id + '&limit=' + limit + '&type=startswith&search=' + inputSearch,
      // для проверки timeout:
-     // url: 'http://kvartvopros.by/test.php',
+     // url: 'http://superresheba.by/test.php',
      success:function(channel) {
        let template = Handlebars.compile( $('#template').html()  );
        $('.updates').empty().append( template(channel)  );
