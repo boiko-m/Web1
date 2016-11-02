@@ -1,32 +1,37 @@
 "use strict";
 
-var id = '755a3e82ea9b0998bc6d83891d7bca33';
-var limit = '100';
-var txtsearch = "mark";
+var id = '755a3e82ea9b0998bc6d83891d7bca33',
+    limit = '100',
+    errTimeOut = 'Ошибочка: время ожидания истекло',
+    errorDiv = document.getElementById('error_block'),
+    inputSearch = document.getElementById('searchform');
 
 let getPlayers = () => {
   $.ajax({
      type: 'GET',
-     url:'https://api.worldofwarplanes.ru/wowp/account/list/?application_id=' + id + '&limit=' + limit + '&type=startswith&search=' + window.txtsearch,
+     timeout: 2000,
+     url:'https://api.worldofwarplanes.ru/wowp/account/list/?application_id=' + id + '&limit=' + limit + '&type=startswith&search=' + inputSearch,
+     // для проверки timeout:
+     // url: 'http://kvartvopros.by/test.php',
      success:function(channel) {
        let template = Handlebars.compile( $('#template').html()  );
        $('.updates').empty().append( template(channel)  );
        console.log("update");
      },
      error:function() {
-      console.log("error");
+       console.log('error');
+       errorDiv.innerHTML = errTimeOut;
      }
    });
 }
 
-var input = document.getElementById('searchform');
-input.oninput = function() {
-    window.txtsearch = input.value;
-    getPlayers();
+inputSearch.oninput = function() {
+    inputSearch = document.getElementById('searchform').value;
+    if (inputSearch.length >= 3) getPlayers();
 };
 
 $(document).ready(function() {
-  getPlayers();
+  if(inputSearch.length >= 3) getPlayers();
 
   $('body').append('<div id="ajaxBusy"><p><img src="img/loader.gif"></p></div>');
   $('#ajaxBusy').css({

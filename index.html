@@ -17,12 +17,12 @@
           <div class="row">
             <div class="control-group">
               <div class="controls">
-                Начало ника: <input type="text" id="searchform" value="" placeholder="Введите текст"> (минимум 3 англ символа)<hr>
+                <input type="text" id="searchform" placeholder="Начало ника"> (минимум 3 англ символа)<hr>
               </div>
             </div>
           </div>
 
-          <div class="updates">
+          <div class="updates" style="display:block;">
           </div>
           <div id="error_block" class="text-center"></div>
           <script id="template" type="text/x-handlebars-template">
@@ -46,7 +46,7 @@
               <tr>
                 <td><b>{{nickname}}</b></td>
                 <td>{{account_id}}</td>
-                <td><a href="http://worldofwarplanes.ru/community/players/17191-MarK/{{account_id}}-{{nickname}}" role="button" target="_blank">Посмореть профиль</a></td>
+                <td><a href="http://worldofwarplanes.ru/community/players/{{account_id}}-{{nickname}}" role="button" target="_blank">Посмореть профиль</a></td>
               </tr> {{/each}}
             </tbody>
           </table>
